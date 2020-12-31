@@ -3717,8 +3717,8 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 						else:
 							bossData[i][6] = ''
 							
-						print(f"Debug : msg.content[{hello}] < tmp_msg[{tmp_msg}]")
 						tmp_msg = bossData[i][0] +'컷'
+						print(f"Debug : msg.content[{hello}] < tmp_msg[{tmp_msg}]")
 						if len(hello) > len(tmp_msg) + 3 :
 							if hello.find(':') != -1 :
 								chkpos = hello.find(':')
