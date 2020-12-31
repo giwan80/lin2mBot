@@ -3717,6 +3717,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 						else:
 							bossData[i][6] = ''
 							
+						print(f"Debug : msg.content[{hello}] < tmp_msg[{tmp_msg}]")
 						tmp_msg = bossData[i][0] +'컷'
 						if len(hello) > len(tmp_msg) + 3 :
 							if hello.find(':') != -1 :
@@ -3726,6 +3727,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 								now2 = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
 								tmp_now = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
 								tmp_now = tmp_now.replace(hour=int(hours1), minute=int(minutes1))
+								print(f"Debug : tmp_now[{tmp_now}] < now2[{now2}]")
 							else:
 								chkpos = len(hello)-2
 								hours1 = hello[chkpos-2:chkpos]
@@ -3733,9 +3735,11 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 								now2 = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
 								tmp_now = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
 								tmp_now = tmp_now.replace(hour=int(hours1), minute=int(minutes1))
+								print(f"Debug : tmp_now[{tmp_now}] < now2[{now2}]")
 						else:
 							now2 = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
 							tmp_now = now2
+							print(f"Debug : tmp_now[{tmp_now}] < now2[{now2}]")
 
 						bossFlag[i] = False
 						bossFlag0[i] = False
@@ -3744,6 +3748,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 
 						if tmp_now > now2 :
 							tmp_now = tmp_now + datetime.timedelta(days=int(-1))
+							print(f"Debug : tmp_now[{tmp_now}] < now2[{now2}]")
 							
 						if tmp_now < now2 : 
 							deltaTime = datetime.timedelta(hours = int(bossData[i][1]), minutes = int(bossData[i][5]))
@@ -3752,8 +3757,10 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 								bossMungCnt[i] = bossMungCnt[i] + 1
 							now2 = tmp_now
 							bossMungCnt[i] = bossMungCnt[i] - 1
+							print(f"Debug : tmp_now[{tmp_now}] < now2[{now2}] = deltaTime[{deltaTime}]")
 						else :
 							now2 = now2 + datetime.timedelta(hours = int(bossData[i][1]), minutes = int(bossData[i][5]))
+							print(f"Debug : tmp_now[{tmp_now}] > now2[{now2}] = deltaTime[{deltaTime}]")
 									
 						tmp_bossTime[i] = bossTime[i] = nextTime = now2
 						tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
