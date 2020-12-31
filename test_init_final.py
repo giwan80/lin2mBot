@@ -3763,6 +3763,8 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 								color=0xff0000
 								)
 						await self.get_channel(channel).send(embed=embed, tts=False)
+					
+						print(f"Debug : bossData[1][{bossData[i][1]}] bossData[2][{bossData[i][2]}] bossData[3][{bossData[i][3]}] bossData[4][{bossData[i][4]}] bossData[5][{bossData[i][5]}] bossData[6][{bossData[i][6]}]")
 
 					################ 보스 멍 처리 ################ 
 
