@@ -3760,7 +3760,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 							print(f"Debug : tmp_now[{tmp_now}] < now2[{now2}] = deltaTime[{deltaTime}]")
 						else :
 							now2 = now2 + datetime.timedelta(hours = int(bossData[i][1]), minutes = int(bossData[i][5]))
-							print(f"Debug : tmp_now[{tmp_now}] > now2[{now2}] = deltaTime[{deltaTime}]")
+							print(f"Debug : tmp_now[{tmp_now}] > now2[{now2}]")
 									
 						tmp_bossTime[i] = bossTime[i] = nextTime = now2
 						tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
